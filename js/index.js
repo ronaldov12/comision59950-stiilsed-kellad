@@ -19,7 +19,6 @@ function mostrarProductos() {
     });
 }
 
-
 // Función para agregar productos al carrito
 function agregarAlCarrito() {
     let carrito = [];  // Inicializo el carrito como un array vacío para que cada producto que seleccione el  usuario se cguarde aca
@@ -59,7 +58,6 @@ function calcularTotalConIva(carrito) {
     return total.toFixed(2); // Devolvemos el total con 2 decimales  
 }
 
-
 // Función para preguntar al usuario si desea pagar en cuotas
 function pagarEnCuotas(total) {
     let respuesta = prompt("¿desea pagar en cuotas? si/no").toLowerCase();
@@ -84,16 +82,12 @@ function pagarEnCuotas(total) {
 }
 
 // Función principal para ejecutar el carrito de compras
-// Función principal para ejecutar el carrito de compras
-// Función principal para ejecutar el carrito de compras
 function carritoDeCompras() {
-    let carrito = agregarAlCarrito(); // Agregar productos al carrito
+    carrito = agregarAlCarrito(); // Agregar productos al carrito
     let total = carrito.reduce((acumulador, producto) => acumulador + producto.precio, 0); // Calcular el total
-    console.log("Carrito final:", carrito); // Mostrar el carrito final en la consola
-    pagarEnCuotas(total); // Preguntar si el usuario quiere pagar en cuotas
+    let montoPorCuota = pagarEnCuotas(total); // Preguntar si el usuario quiere pagar en cuotas
+    console.log("Carrito final:", carrito ); // Mostrar el carrito final en la consola
+    console.log("Total a pagar (con IVA):", total); // Mostrar el total con iva en la consola
 }
 carritoDeCompras();
 // Ejecutar la función principal
-
-console.log("Carrito final:", carrito); // Muestro el carrito final en la consola
-pagarEnCuotas(total); // Pregunta si el usuario quiere pagar en cuotas
